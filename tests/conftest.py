@@ -5,6 +5,10 @@ from app.workflow import load,run
 @pytest.fixture
 def raw():return load('dirty.csv')
 @pytest.fixture
+def clean():return load('clean.csv')
+@pytest.fixture
+def oversettle():return load('oversettle.csv')
+@pytest.fixture
 def state(raw):return run(raw,{})
 @pytest.fixture
 def client(tmp_path,monkeypatch):
